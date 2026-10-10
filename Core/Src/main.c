@@ -45,10 +45,11 @@ static void GPIO_Init(void) {
 
 int main(void) {
 
+  GPIO_Init();
   /* Create 3 test tasks: OS_CreateTask(Priority, Period in ms, TaskFunc) */
-  OS_CreateTask(0, 100, Task1);  /* Task 1: Priority 0, Period = 100 ms */
-  OS_CreateTask(1, 500, Task2);  /* Task 2: Priority 1, Period = 500 ms */
-  OS_CreateTask(2, 1000, Task3); /* Task 3: Priority 2, Period = 1000 ms (1s) */
+  OS_CreateTask(0, 100, 0, Task1); /* Task 1: Priority 0, Period = 100 ms */
+  OS_CreateTask(1, 500, 0, Task2); /* Task 2: Priority 1, Period = 500 ms */
+  OS_CreateTask(2, 1000, 0, Task3); /* Task 3: Priority 2, Period = 1000 ms (1s) */
 
   /* Start the OS Scheduler */
   os_start_scheduler();

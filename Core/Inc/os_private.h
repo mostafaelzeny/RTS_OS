@@ -11,6 +11,7 @@
 typedef struct
 {
 	u8 Pirority;
+	u16 First_Delay;
 	u16 period;
     void (*pf)(void);
 } TCP_t;
