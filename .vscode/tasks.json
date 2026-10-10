@@ -1,0 +1,28 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build Project",
+      "type": "shell",
+      "command": "powershell -ExecutionPolicy Bypass -File .\\build.ps1 -Target all",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "Clean Project",
+      "type": "shell",
+      "command": "powershell -ExecutionPolicy Bypass -File .\\build.ps1 -Target clean",
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "Rebuild Project",
+      "type": "shell",
+      "command": "powershell -ExecutionPolicy Bypass -File .\\build.ps1 -Target clean; powershell -ExecutionPolicy Bypass -File .\\build.ps1 -Target all",
+      "group": "build",
+      "problemMatcher": ["$gcc"]
+    }
+  ]
+}
